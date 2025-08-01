@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: rev-user-management    # Change this to your app service name
+  AZURE_WEBAPP_NAME: app-test-01   # Change this to your app service name
   DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/springboot-backend
   IMAGE_TAG: ${{ github.sha }}
 
