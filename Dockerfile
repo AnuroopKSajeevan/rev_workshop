@@ -2,7 +2,7 @@
 FROM gradle:8.5-jdk21 AS builder
 WORKDIR /app
 COPY . .
-RUN gradle build -x test
+RUN gradle build
 
 # Run stage
 FROM eclipse-temurin:21-jre-jammy
