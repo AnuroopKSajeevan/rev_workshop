@@ -37,10 +37,11 @@ jobs:
         MONGODB_DATABASE: user_management_test_db
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
         path: build/libs/*.jar
+        retention-days: 5
 
   dockerize-and-push:
     needs: build-and-test
@@ -51,7 +52,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Download build artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: build-artifacts
         path: build/libs/
