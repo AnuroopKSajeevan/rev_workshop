@@ -5,7 +5,7 @@ COPY . .
 RUN gradle build
 
 # Run stage
-FROM eclipse-temurin:21-jre-jammy
+FROM eclipse-temurin:21
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
 
@@ -16,4 +16,4 @@ ENV SERVER_PORT=8081
 EXPOSE 8081
 
 # Command to run the application
-CMD ["java", "-jar", "app.jar"] 
+CMD ["java", "--add-opens", "java.base/java.time=ALL-UNNAMED", "-jar", "app.jar"] 
