@@ -9,11 +9,8 @@ FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
 
-# Environment variables for MongoDB configuration
-ENV MONGODB_HOST=mongodb \
-    MONGODB_PORT=27017 \
-    MONGODB_DATABASE=user_management_db \
-    SERVER_PORT=8081
+# Environment variables
+ENV SERVER_PORT=8081
 
 # Expose the application port
 EXPOSE 8081

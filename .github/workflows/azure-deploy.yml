@@ -32,9 +32,7 @@ jobs:
     - name: Build and Test
       run: ./gradlew build
       env:
-        MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-        MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-        MONGODB_DATABASE: user_management_test_db
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
