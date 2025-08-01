@@ -9,9 +9,6 @@ FROM eclipse-temurin:21
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
 
-# Environment variables
-ENV SERVER_PORT=8081
-
 # Expose the application port
 EXPOSE 8081
 
